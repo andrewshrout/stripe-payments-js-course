@@ -35,7 +35,6 @@ app.use(decodeJWT);
 async function decodeJWT(req: Request, res: Response, next: NextFunction) {
   if (req.headers?.authorization?.startsWith('Bearer ')) {
     const idToken = req.headers.authorization.split('Bearer ')[1];
-
     try {
       const decodedToken = await auth.verifyIdToken(idToken);
       req['currentUser'] = decodedToken;
@@ -63,6 +62,7 @@ function runAsync(callback: Function) {
  */
 function validateUser(req: Request) {
   const user = req['currentUser'];
+  console.log(user)
   if (!user) {
     throw new Error(
       'You must be logged in to make this request. i.e Authroization: Bearer <token>'

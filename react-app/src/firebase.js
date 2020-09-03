@@ -3,14 +3,16 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 export const firebaseConfig = {
-  apiKey: 'AIzaSyAUzu622-f23fl0LX1rf6nxzzy0MP5ERLA',
-  authDomain: 'stripe-js-course.firebaseapp.com',
-  databaseURL: 'https://stripe-js-course.firebaseio.com',
-  projectId: 'stripe-js-course',
-  storageBucket: 'stripe-js-course.appspot.com',
-  messagingSenderId: '84918842518',
-  appId: '1:84918842518:web:d23dedb546fd2e8ee63eb7',
+  apiKey: "AIzaSyCJLGaDqpTj971XmF41rk7Jhf22ncP2OcM",
+  authDomain: "real-estate-saas-47e04.firebaseapp.com",
+  databaseURL: "https://real-estate-saas-47e04.firebaseio.com",
+  projectId: "real-estate-saas-47e04",
+  storageBucket: "real-estate-saas-47e04.appspot.com",
+  messagingSenderId: "560256521387",
+  appId: "1:560256521387:web:76c7b85cd51547762113ee",
+  measurementId: "G-SSCZ8VH0BZ"
 };
+
 
 firebase.initializeApp(firebaseConfig)
 

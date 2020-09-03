@@ -28,7 +28,7 @@ exports.listPaymentMethods = listPaymentMethods;
  */
 async function getOrCreateCustomer(userId, params) {
     const userSnapshot = await firebase_1.db.collection('users').doc(userId).get();
-    const { stripeCustomerId, email } = userSnapshot.data();
+    const { stripeCustomerId, email } = userSnapshot.data() || {};
     // If missing customerID, create it
     if (!stripeCustomerId) {
         // CREATE new customer

@@ -9,6 +9,7 @@ const firebase_admin_1 = require("firebase-admin");
  * subscribes to a Stripe plan, and saves the plan to Firestore
  */
 async function createSubscription(userId, plan, payment_method) {
+    console.log('we made it to billing');
     const customer = await customers_1.getOrCreateCustomer(userId);
     // Attach the  payment method to the customer
     await _1.stripe.paymentMethods.attach(payment_method, { customer: customer.id });
@@ -16,6 +17,8 @@ async function createSubscription(userId, plan, payment_method) {
     await _1.stripe.customers.update(customer.id, {
         invoice_settings: { default_payment_method: payment_method },
     });
+    console.log(customer.id);
+    console.log(plan);
     const subscription = await _1.stripe.subscriptions.create({
         customer: customer.id,
         items: [{ plan }],

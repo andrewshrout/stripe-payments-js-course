@@ -13,6 +13,7 @@ export async function createSubscription(
   plan: string,
   payment_method: string
 ) {
+  console.log('we made it to billing')
   const customer = await getOrCreateCustomer(userId);
 
   // Attach the  payment method to the customer
@@ -23,6 +24,8 @@ export async function createSubscription(
     invoice_settings: { default_payment_method: payment_method },
   });
 
+  console.log(customer.id)
+  console.log(plan)
   const subscription = await stripe.subscriptions.create({
     customer: customer.id,
     items: [{ plan }],

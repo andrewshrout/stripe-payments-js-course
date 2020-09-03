@@ -17,7 +17,13 @@ const webhookHandlers = {
         // Add your business logic here
     },
     'customer.subscription.deleted': async (data) => {
-        // Add your business logic here
+        const customer = await _1.stripe.customers.retrieve(data.customer);
+        const userId = customer.metadata.firebaseUID;
+        const userRef = firebase_1.db.collection('users').doc(userId);
+        await userRef
+            .update({
+            activePlans: firebase_admin_1.firestore.FieldValue.arrayRemove(data.plan.id),
+        });
     },
     'customer.subscription.created': async (data) => {
         const customer = await _1.stripe.customers.retrieve(data.customer);

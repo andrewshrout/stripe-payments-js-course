@@ -136,23 +136,23 @@ function SubscribeToPlan(props) {
           <button
             className={
               'btn ' +
-              (plan === 'plan_HC2o83JbeowZnP'
+              (plan === 'price_1HNKonErwA8bEx8YRLMMSlCH'
                 ? 'btn-primary'
                 : 'btn-outline-primary')
             }
-            onClick={() => setPlan('plan_HC2o83JbeowZnP')}>
+            onClick={() => setPlan('price_1HNKonErwA8bEx8YRLMMSlCH')}>
             Choose Monthly $25/m
           </button>
 
           <button
             className={
               'btn ' +
-              (plan === 'plan_HD6rlaovzAiM7B'
+              (plan === 'price_1HNKomErwA8bEx8YoqC36fJP'
                 ? 'btn-primary'
                 : 'btn-outline-primary')
             }
-            onClick={() => setPlan('plan_HD6rlaovzAiM7B')}>
-            Choose Quarterly $50/q
+            onClick={() => setPlan('price_1HNKomErwA8bEx8YoqC36fJP')}>
+            Choose Annually $275/q
           </button>
 
           <p>

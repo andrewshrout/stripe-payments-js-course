@@ -1,6 +1,6 @@
 import { auth } from './firebase';
-const API = 'https://stripe-server-apw6lsu5yq-uc.a.run.app';
-// const API = 'http://localhost:3333';
+//const API = 'https://stripe-server-apw6lsu5yq-uc.a.run.app';
+ const API = 'http://localhost:3000';
 
 /**
  * A helper function to fetch data from your API.
@@ -8,10 +8,8 @@ const API = 'https://stripe-server-apw6lsu5yq-uc.a.run.app';
  */
 export async function fetchFromAPI(endpointURL, opts) {
   const { method, body } = { method: 'POST', body: null, ...opts };
-
   const user = auth.currentUser;
   const token = user && (await user.getIdToken());
-
   const res = await fetch(`${API}/${endpointURL}`, {
     method,
     ...(body && { body: JSON.stringify(body) }),

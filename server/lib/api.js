@@ -53,6 +53,7 @@ function runAsync(callback) {
  */
 function validateUser(req) {
     const user = req['currentUser'];
+    console.log(user);
     if (!user) {
         throw new Error('You must be logged in to make this request. i.e Authroization: Bearer <token>');
     }
